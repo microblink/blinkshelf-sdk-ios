@@ -10,7 +10,7 @@ BlinkShelf lets you build a fantastic in-store experience in your iOS app. Effor
   s.homepage         = 'https://github.com/microblink/blinkshelf-sdk-ios'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { "Darren Bassman" => "darren.bassman@microblink.com" }
-  s.source           = { :git => 'https://github.com/microblink/blinkshelf-sdk-ios', :tag => "#{s.version}" }
+  s.source           = { :git => 'https://github.com/microblink/blinkshelf-sdk-ios.git', :tag => "#{s.version}" }
   
   s.vendored_frameworks = ["BlinkShelf.xcframework"]
   
