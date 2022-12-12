@@ -1,0 +1,11 @@
+framework module BlinkShelf {
+  umbrella header "BlinkShelf.h"
+
+  export *
+  module * { export * }
+}
+
+module BlinkShelf.Swift {
+  header "BlinkShelf-Swift.h"
+  requires objc
+}

@@ -1,0 +1,891 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BlinkShelf
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import ARKit
+import AVFoundation
+@_exported import BlinkShelf
+import CoreLocation
+import CoreMedia
+import CoreMotion
+import Foundation
+import Network
+import Security
+import Swift
+import UIKit
+import VideoToolbox
+import _Concurrency
+import _StringProcessing
+import simd
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class ResultListView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var cardHiddenHeight: CoreFoundation.CGFloat {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var cardShownHeight: CoreFoundation.CGFloat {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var didSelectPromo: ((BlinkShelf.Promo) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var didTapCard: (() -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var draggingCard: ((UIKit.UIPanGestureRecognizer) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var isShown: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var products: [BlinkShelf.ProductInfo] {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var store: BlinkShelf.Store? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var summaryText: Swift.String? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var cardHandleBar: UIKit.UIView
+  @_Concurrency.MainActor(unsafe) public var cardView: UIKit.UIView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var summaryLabel: UIKit.UILabel {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var tableView: UIKit.UITableView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) public func loadList(of products: [BlinkShelf.ProductInfo], store: BlinkShelf.Store?)
+  @objc deinit
+}
+extension BlinkShelf.ResultListView : UIKit.UITableViewDelegate, UIKit.UITableViewDataSource {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func numberOfSections(in tableView: UIKit.UITableView) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, viewForHeaderInSection section: Swift.Int) -> UIKit.UIView?
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, heightForHeaderInSection section: Swift.Int) -> CoreFoundation.CGFloat
+}
+public struct ProductInfo : Swift.Equatable {
+  public let order: Swift.Int
+  public let productData: BlinkShelf.Products.StaticDiscovery.Response.Product
+  public let promotions: [BlinkShelf.Products.StaticDiscovery.Response.PromotionDisplay]?
+  public var hasPromotion: Swift.Bool {
+    get
+  }
+  public static func == (lhs: BlinkShelf.ProductInfo, rhs: BlinkShelf.ProductInfo) -> Swift.Bool
+}
+public class DetectionResult {
+  final public let id: Swift.UInt
+  final public let typeOfDetection: Swift.Int
+  final public let score: Swift.Float
+  final public let left: CoreFoundation.CGFloat
+  final public let right: CoreFoundation.CGFloat
+  final public let top: CoreFoundation.CGFloat
+  final public let bottom: CoreFoundation.CGFloat
+  public init(id: Swift.UInt, typeOfDetection: Swift.Int, score: Swift.Float, left: CoreFoundation.CGFloat, right: CoreFoundation.CGFloat, top: CoreFoundation.CGFloat, bottom: CoreFoundation.CGFloat)
+  public var width: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  public var height: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  public var center: CoreFoundation.CGPoint {
+    get
+    set
+  }
+  public var rect: CoreFoundation.CGRect {
+    get
+    set
+  }
+  @objc deinit
+}
+public struct ResultIndicatorConfiguration {
+  public static var shared: BlinkShelf.ResultIndicatorConfiguration
+  public var contentBackgroundColor: UIKit.UIColor
+  public var selectedProductBackgroundColor: UIKit.UIColor
+  public var productIcon: UIKit.UIImage?
+  public var selectedProductIcon: UIKit.UIImage?
+  public var promotionIcon: UIKit.UIImage?
+  public var selectedPromotionIcon: UIKit.UIImage?
+  public var iconTintColor: UIKit.UIColor
+  public var selectedIconTintColor: UIKit.UIColor
+  public var pulseAnimationDuration: CoreFoundation.CGFloat
+  public var pulseTintColor: UIKit.UIColor
+  public var resizeAnimationDuration: CoreFoundation.CGFloat
+  public var badgeBackgroundColor: UIKit.UIColor
+  public var badgeFont: UIKit.UIFont?
+  public var badgeTextColor: UIKit.UIColor
+  public var badgeSize: CoreFoundation.CGSize
+  public var selectedTextFont: UIKit.UIFont?
+  public var selectedTextColor: UIKit.UIColor
+  public init()
+}
+@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) public class GradientBackgroundView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open class var layerClass: Swift.AnyClass {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class SinglePhotoVC : UIKit.UIViewController, AVFoundation.AVCapturePhotoCaptureDelegate, AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
+  @_Concurrency.MainActor(unsafe) open var capturedImageURL: Foundation.URL? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) open var captureRegion: CoreFoundation.CGRect
+  @_Concurrency.MainActor(unsafe) open var didCaptureImage: ((UIKit.UIImage, Foundation.URL?) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) open var didReceiveResults: (([BlinkShelf.ProductInfo], Foundation.URL?, BlinkShelf.Products.StaticDiscovery.Response.Session?, BlinkShelf.Products.StaticDiscovery.Response.StoreDetection?) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) open var didUpdateCaptureSessionRunning: ((Swift.Bool) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) open var shouldPresentResults: Swift.Bool
+  @_Concurrency.MainActor(unsafe) open var shouldScanCapturedImage: Swift.Bool
+  @_Concurrency.MainActor(unsafe) open var shouldShowPromotions: Swift.Bool
+  @_Concurrency.MainActor(unsafe) open var shutterButton: UIKit.UIButton {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc open func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
+  @_Concurrency.MainActor(unsafe) @objc open func photoOutput(_ output: AVFoundation.AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVFoundation.AVCapturePhoto, error: Swift.Error?)
+  @_Concurrency.MainActor(unsafe) @objc open func photoOutput(_ output: AVFoundation.AVCapturePhotoOutput, willCapturePhotoFor resolvedSettings: AVFoundation.AVCaptureResolvedPhotoSettings)
+  @_Concurrency.MainActor(unsafe) open func clearAllCapturedImagesFromDisk(okTitle: Swift.String?, okMesssage: Swift.String?, failedTitle: Swift.String?, failedMessage: Swift.String?)
+  @_Concurrency.MainActor(unsafe) open func startCaptureSession()
+  @_Concurrency.MainActor(unsafe) open func stopCaptureSession()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public struct ResultBannerConfiguration {
+  public static var shared: BlinkShelf.ResultBannerConfiguration
+  public var contentBackgroundColor: UIKit.UIColor
+  public var highlightedBackgroundColor: UIKit.UIColor
+  public var highlightedFont: UIKit.UIFont?
+  public var highlightedTextColor: UIKit.UIColor
+  public var photoContentMode: UIKit.UIView.ContentMode
+  public var tagBackgroundColor: UIKit.UIColor
+  public var tagImage: UIKit.UIImage?
+  public var tagTintColor: UIKit.UIColor
+  public var titleFont: UIKit.UIFont?
+  public var titleTextColor: UIKit.UIColor
+  public var subtitleFont: UIKit.UIFont?
+  public var subtitleTextColor: UIKit.UIColor
+  public var detailFont: UIKit.UIFont?
+  public var detailTextColor: UIKit.UIColor
+  public var scrollViewHorizontalGap: CoreFoundation.CGFloat
+  public var scrollViewHorizontalInset: CoreFoundation.CGFloat
+  public init()
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class ResultBanner : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public static let bannerHeight: CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) public var didTapBanner: ((BlinkShelf.Promo?) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var promo: BlinkShelf.Promo? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var product: BlinkShelf.ProductInfo? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var contentView: UIKit.UIView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var imageView: UIKit.UIImageView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var highlightedLabel: UIKit.UILabel {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var highlightedView: UIKit.UIView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var tagView: UIKit.UIView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var tagImageView: UIKit.UIImageView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var titleLabel: UIKit.UILabel {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var subtitleLabel: UIKit.UILabel {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var detailLabel: UIKit.UILabel {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) public func loadProduct(_ product: BlinkShelf.ProductInfo, withPromotionAtIndex index: Swift.Int? = nil)
+  @objc deinit
+}
+public struct ResultDetailsConfiguration {
+  public static var shared: BlinkShelf.ResultDetailsConfiguration
+  public var cardBackgroundColor: UIKit.UIColor
+  public var detailBorderColor: UIKit.UIColor
+  public var detailHeaderIcon: UIKit.UIImage?
+  public var detailHeaderIconTintColor: UIKit.UIColor
+  public var detailHeaderFont: UIKit.UIFont?
+  public var detailHeaderText: Swift.String
+  public var detailHeaderTextColor: UIKit.UIColor
+  public var mainDetailFont: UIKit.UIFont
+  public var mainDetailTextColor: UIKit.UIColor
+  public var limitationDetailFont: UIKit.UIFont
+  public var limitationDetailTextColor: UIKit.UIColor
+  public var dismissButtonImage: UIKit.UIImage?
+  public var dismissButtonSize: CoreFoundation.CGSize
+  public var dismissButtonTintColor: UIKit.UIColor
+  public var highlightedBackgroundColor: UIKit.UIColor
+  public var highlightedFont: UIKit.UIFont?
+  public var highlightedTextColor: UIKit.UIColor
+  public var photoContentMode: UIKit.UIView.ContentMode
+  public var tagBackgroundColor: UIKit.UIColor
+  public var tagImage: UIKit.UIImage?
+  public var tagTintColor: UIKit.UIColor
+  public var titleFont: UIKit.UIFont?
+  public var titleTextColor: UIKit.UIColor
+  public init()
+}
+public protocol StabilityDelegate : AnyObject {
+  func stabilityDelegate(isMoving: Swift.Bool)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class ScanAgainButton : UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) public var borderView: UIKit.UIView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var contentView: UIKit.UIView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var iconView: UIKit.UIImageView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var label: UIKit.UILabel {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
+public struct ResultListConfiguration {
+  public static var shared: BlinkShelf.ResultListConfiguration
+  public var cardBackgroundColor: UIKit.UIColor
+  public var cardHandleBarColor: UIKit.UIColor
+  public var summaryFont: UIKit.UIFont
+  public var summaryTextColor: UIKit.UIColor
+  public var headerHeight: CoreFoundation.CGFloat
+  public var headerFont: UIKit.UIFont
+  public var headerTextColor: UIKit.UIColor
+  public var headerPromotionsText: Swift.String
+  public var headerProductsText: Swift.String
+  public init()
+}
+public struct Store : Swift.Decodable {
+  public var id: Swift.Int
+  public var name: Swift.String?
+  public var addressLine1: Swift.String?
+  public var addressLine2: Swift.String?
+  public var addressLine3: Swift.String?
+  public var city: Swift.String?
+  public var state: Swift.String?
+  public var zipCode: Swift.String?
+  public var country: Swift.String?
+  public var latitude: Swift.Double?
+  public var longitude: Swift.Double?
+  public var address: Swift.String?
+  public var distance: Swift.Double?
+  public var units: Swift.String?
+  public var merchantName: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+}
+public class FeaturesExtractor {
+  weak public var delegate: BlinkShelf.FeaturesExtractorDelegate?
+  public init(arSession: ARKit.ARSession, timeInterval: Foundation.TimeInterval)
+  @objc deinit
+}
+public protocol FeaturesExtractorDelegate : AnyObject {
+  func featuresExtractor(frame: ARKit.ARFrame, features: BlinkShelf.Features)
+  func featuresExtractor(lastProcessingTime: Swift.UInt64)
+}
+extension BlinkShelf.Products {
+  public struct StaticDiscovery {
+    public struct Response : Swift.Decodable {
+      public struct Product : Swift.Decodable {
+        public init(from decoder: Swift.Decoder) throws
+      }
+      public struct PromotionDisplay : Swift.Decodable {
+        public init(from decoder: Swift.Decoder) throws
+      }
+      public struct Session : Swift.Decodable {
+        public var sessionId: Swift.String?
+        public var frameId: Swift.String?
+        public init(from decoder: Swift.Decoder) throws
+      }
+      public struct StoreDetection : Swift.Decodable {
+        public var store: BlinkShelf.Store?
+        public var suggestions: [BlinkShelf.Store]
+        public init(from decoder: Swift.Decoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+    }
+  }
+}
+public struct ResultStoreCellConfiguration {
+  public static var shared: BlinkShelf.ResultStoreCellConfiguration
+  public var nameFont: UIKit.UIFont
+  public var nameTextColor: UIKit.UIColor
+  public var detailFont: UIKit.UIFont
+  public var detailTextColor: UIKit.UIColor
+}
+public struct ResultListCellConfiguration {
+  public static var shared: BlinkShelf.ResultListCellConfiguration
+  public var contentBackgroundColor: UIKit.UIColor
+  public var borderCornerRadius: CoreFoundation.CGFloat
+  public var borderColor: UIKit.UIColor
+  public var promotionBorderColor: UIKit.UIColor
+  public var borderWidth: CoreFoundation.CGFloat
+  public var highlightedBackgroundColor: UIKit.UIColor
+  public var highlightedFont: UIKit.UIFont?
+  public var highlightedTextColor: UIKit.UIColor
+  public var photoContentMode: UIKit.UIView.ContentMode
+  public var tagBackgroundColor: UIKit.UIColor
+  public var tagImage: UIKit.UIImage?
+  public var tagTintColor: UIKit.UIColor
+  public var titleFont: UIKit.UIFont?
+  public var titleTextColor: UIKit.UIColor
+  public var subtitleFont: UIKit.UIFont?
+  public var subtitleTextColor: UIKit.UIColor
+  public var detailFont: UIKit.UIFont?
+  public var detailTextColor: UIKit.UIColor
+  public init()
+}
+@_hasMissingDesignatedInitializers public class StaticDiscoveryManager {
+  public static let shared: BlinkShelf.StaticDiscoveryManager
+  public var didReceiveIndexedProducts: (([(Swift.Int64, BlinkShelf.ProductInfo)], BlinkShelf.Products.StaticDiscovery.Response.Session?, BlinkShelf.Products.StaticDiscovery.Response.StoreDetection?) -> Swift.Void)?
+  public var maxRetryCount: Swift.Int
+  public var timeoutLimit: Swift.Double
+  public func scanImageForProducts(_ image: UIKit.UIImage, withPromotions: Swift.Bool = true, sessionId: Swift.String? = nil, userLocation: BlinkShelf.UserLocation? = nil)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class NetworkBannerView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var connectedIcon: UIKit.UIImage?
+  @_Concurrency.MainActor(unsafe) public var connectedText: Swift.String
+  @_Concurrency.MainActor(unsafe) public var noConnectionIcon: UIKit.UIImage?
+  @_Concurrency.MainActor(unsafe) public var noConnectionText: Swift.String
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ResultVC : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public var detectedProducts: [BlinkShelf.ProductInfo] {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var currentStore: BlinkShelf.Store? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var willDismiss: (() -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var capturedImage: UIKit.UIImage?
+  @_Concurrency.MainActor(unsafe) public var resultBannerView: BlinkShelf.ResultBannerScrollView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var resultCardView: BlinkShelf.ResultListView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var scanAgainButton: BlinkShelf.ScanAgainButton {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var currentStoreLabel: BlinkShelf.ScanAgainStoreView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) public func loadReceivedIndexedProducts(_ indexToProductInfo: [(Swift.Int64, BlinkShelf.ProductInfo)], withPromotions: Swift.Bool = true, currentStore: BlinkShelf.Store? = nil, shouldPresent: @escaping (_ shouldPresent: Swift.Bool, _ viewController: BlinkShelf.ResultVC) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ResultDetailsVC : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public var didDismiss: (() -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var promo: BlinkShelf.Promo? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var cardView: UIKit.UIView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var dismissButton: UIKit.UIButton {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var detailHeaderIconView: UIKit.UIImageView
+  @_Concurrency.MainActor(unsafe) public var detailHeaderLabel: UIKit.UILabel
+  @_Concurrency.MainActor(unsafe) public var detailHeaderView: UIKit.UIView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var detailLabel: UIKit.UILabel {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var detailView: UIKit.UIView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var titleLabel: UIKit.UILabel {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var photoView: UIKit.UIImageView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var highlightedLabel: UIKit.UILabel {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var highlightedView: UIKit.UIView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var tagView: UIKit.UIView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var tagImageView: UIKit.UIImageView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var scrollView: UIKit.UIScrollView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) public func loadPromoDetails(of promotion: BlinkShelf.Promo?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class ResultBannerScrollView : UIKit.UIView, UIKit.UIScrollViewDelegate {
+  @_Concurrency.MainActor(unsafe) public var banners: [BlinkShelf.ResultBanner] {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var didTapBanner: ((BlinkShelf.Promo?) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var didChangeCurrentPage: ((Swift.Int) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var horizontalGap: CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) public var horizontalViewInset: CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) public var pageControl: UIKit.UIPageControl {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var scrollView: UIKit.UIScrollView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) public func loadResultBanners(for resultIndicator: BlinkShelf.ResultIndicator?)
+  @_Concurrency.MainActor(unsafe) @objc public func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
+  @objc deinit
+}
+public struct StoreDetectionConfiguration {
+  public static var shared: BlinkShelf.StoreDetectionConfiguration
+  public static let minimumRadius: Swift.Float
+  public static let maximumRadius: Swift.Float
+  public var isEnabled: Swift.Bool
+  public var unitOfDistance: BlinkShelf.StoreDetectionConfiguration.UnitOfDistance
+  public var radius: Swift.Float
+  public enum UnitOfDistance : Swift.String, Swift.CaseIterable {
+    case mi, km
+    public init?(rawValue: Swift.String)
+    public typealias AllCases = [BlinkShelf.StoreDetectionConfiguration.UnitOfDistance]
+    public typealias RawValue = Swift.String
+    public static var allCases: [BlinkShelf.StoreDetectionConfiguration.UnitOfDistance] {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+}
+public struct Products {
+  public struct Request : Swift.Encodable {
+    public var countryIsoAlpha2Code: Swift.String
+    public var products: [BlinkShelf.Products.Request.Product]
+    public var features: BlinkShelf.Products.Request.Features
+    public var storeDetection: BlinkShelf.Products.Request.StoreDetection?
+    public struct Product : Swift.Encodable {
+      public var order: Swift.Int
+      public var productIntelData: BlinkShelf.Products.Request.Product.ProductIntelData?
+      public var imageBase64Encoded: Swift.String?
+      public var embedding: [Swift.Float]?
+      public init(order: Swift.Int, productIntelData: BlinkShelf.Products.Request.Product.ProductIntelData? = nil, imageBase64Encoded: Swift.String? = nil, embedding: [Swift.Float]? = nil)
+      public struct ProductIntelData : Swift.Encodable {
+        public var upc: Swift.String
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    public struct Features : Swift.Encodable {
+      public var dietary: Swift.Bool
+      public var recommendations: Swift.Bool
+      public var ratings: Swift.Bool
+      public var promotions: Swift.Bool
+      public var reviews: Swift.Bool
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    public struct StoreDetection : Swift.Encodable {
+      public var latitude: Swift.Double
+      public var longitude: Swift.Double
+      public var radius: Swift.Float
+      public var units: Swift.String
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    public func encode(to encoder: Swift.Encoder) throws
+  }
+  public struct Response : Swift.Decodable {
+    public var success: Swift.Bool?
+    public var products: [BlinkShelf.Products.Response.Product]?
+    public var promotions: BlinkShelf.Products.Response.Promotions?
+    public var storeDetection: BlinkShelf.Products.Response.StoreDetection?
+    public init(success: Swift.Bool? = nil, products: [BlinkShelf.Products.Response.Product]? = nil, promotions: BlinkShelf.Products.Response.Promotions? = nil, storeDetection: BlinkShelf.Products.Response.StoreDetection? = nil)
+    public struct Product : Swift.Decodable {
+      public var order: Swift.Int
+      public var upc: Swift.String?
+      public var productName: Swift.String?
+      public var brand: Swift.String?
+      public var size: Swift.String?
+      public var imageUrl: Swift.String?
+      public var sector: Swift.String?
+      public var department: Swift.String?
+      public var majorCategory: Swift.String?
+      public var discovery: BlinkShelf.Products.Response.Discovery?
+      public init(from decoder: Swift.Decoder) throws
+    }
+    public struct Discovery : Swift.Decodable {
+      public var dietary: BlinkShelf.Products.Response.Dietary?
+      public var reviews: BlinkShelf.Products.Response.Reviews?
+      public init(from decoder: Swift.Decoder) throws
+    }
+    public struct Dietary : Swift.Decodable {
+      public var barcodes: [Swift.String]?
+      public var dietaryTags: [Swift.String]?
+      public var allergenTags: [Swift.String]?
+      public var ingredients: [Swift.String]?
+      public var nutrition: [BlinkShelf.Products.Response.Nutrition]?
+      public init(from decoder: Swift.Decoder) throws
+    }
+    public struct Nutrition : Swift.Decodable {
+      public var name: Swift.String?
+      public var amount: Swift.String?
+      public var measurement: Swift.String?
+      public init(from decoder: Swift.Decoder) throws
+    }
+    public struct Reviews : Swift.Decodable {
+      public var totalAverageRatings: Swift.Float?
+      public var topReviews: [BlinkShelf.Products.Response.Review]?
+      public var recentReviews: [BlinkShelf.Products.Response.Review]?
+      public init(from decoder: Swift.Decoder) throws
+    }
+    public struct Review : Swift.Decodable {
+      public var date: Swift.String?
+      public var name: Swift.String?
+      public var title: Swift.String?
+      public var description: Swift.String?
+      public var rating: Swift.Float?
+      public static let minRating: Swift.Int
+      public static let maxRating: Swift.Int
+      public init(from decoder: Swift.Decoder) throws
+    }
+    public struct Promotions : Swift.Decodable {
+      public var targetedPromotions: [BlinkShelf.Products.Response.Promotion]?
+      public var untargetedPromotions: [BlinkShelf.Products.Response.Promotion]?
+      public init(from decoder: Swift.Decoder) throws
+    }
+    public struct Promotion : Swift.Decodable {
+      public var promotionDisplay: BlinkShelf.Products.Response.PromotionDisplay?
+      public var qualifiedProductIndices: [Swift.Int]
+      public init(from decoder: Swift.Decoder) throws
+    }
+    public struct PromotionDisplay : Swift.Decodable {
+      public var headline: Swift.String?
+      public var description: Swift.String?
+      public var limitationDetails: Swift.String?
+      public var bannerText: Swift.String?
+      public init(from decoder: Swift.Decoder) throws
+    }
+    public struct StoreDetection : Swift.Decodable {
+      public var store: BlinkShelf.Store?
+      public var suggestions: [BlinkShelf.Store]
+      public init(from decoder: Swift.Decoder) throws
+    }
+    public init(from decoder: Swift.Decoder) throws
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class ResultIndicator : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var didSelectResultIndicator: ((BlinkShelf.ResultIndicator) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var isSelected: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var product: BlinkShelf.ProductInfo? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var promos: [BlinkShelf.Promo] {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var badgeText: Swift.String? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var badgeLabel: UIKit.UILabel {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var badgeView: UIKit.UIView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var contentView: UIKit.UIView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var imageBackgroundView: UIKit.UIView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var imageView: UIKit.UIImageView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var pulseView: UIKit.UIView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var selectedTextLabel: UIKit.UILabel {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
+public struct SDKConfiguration {
+  public static var shared: BlinkShelf.SDKConfiguration
+  public var singlePhotoBoundingBoxesToShow: BlinkShelf.SDKConfiguration.SinglePhotoBoundingBoxesToShow
+  public var singlePhotoCompressionQuality: CoreFoundation.CGFloat
+  public var shouldShowDebugData: Swift.Bool
+  public var shouldShowPromotions: Swift.Bool
+  public var shouldUseProductionAPI: Swift.Bool
+  public var countryIsoAlpha2Code: Swift.String
+  public var storeDetection: BlinkShelf.StoreDetectionConfiguration
+  public enum SinglePhotoBoundingBoxesToShow {
+    case rawBoundingBoxes
+    case trackingBoxes
+    public static func == (a: BlinkShelf.SDKConfiguration.SinglePhotoBoundingBoxesToShow, b: BlinkShelf.SDKConfiguration.SinglePhotoBoundingBoxesToShow) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+public class ContoursExtractor {
+  weak public var delegate: BlinkShelf.ContoursExtractorDelegate?
+  public init(arSession: ARKit.ARSession, timeInterval: Foundation.TimeInterval)
+  @objc deinit
+}
+public protocol ContoursExtractorDelegate : AnyObject {
+  func contoursExtractor(frame: ARKit.ARFrame, contoursImage: UIKit.UIImage)
+  func contoursExtractor(lastProcessingTime: Swift.UInt64)
+}
+@objc @_hasMissingDesignatedInitializers final public class LocationManager : ObjectiveC.NSObject {
+  public static let shared: BlinkShelf.LocationManager
+  final public var canEnableStoreDetection: Swift.Bool {
+    get
+  }
+  final public var userLocation: BlinkShelf.UserLocation? {
+    get
+  }
+  final public func startUpdatingLocation()
+  final public func stopUpdatingLocation()
+  @objc deinit
+}
+extension BlinkShelf.LocationManager : CoreLocation.CLLocationManagerDelegate {
+  @objc final public func locationManagerDidChangeAuthorization(_ manager: CoreLocation.CLLocationManager)
+  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
+}
+public struct UserLocation {
+}
+@_hasMissingDesignatedInitializers final public class NetworkManager {
+  public static var shared: BlinkShelf.NetworkManager
+  final public var isReachable: Swift.Bool {
+    get
+  }
+  final public var isReachableOnCellular: Swift.Bool {
+    get
+  }
+  final public var didUpdateNetworkConnectionStatus: ((Swift.Bool) -> Swift.Void)?
+  @objc deinit
+  final public func startMonitoring()
+  final public func stopMonitoring()
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ScanActivityViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public var capturedImage: UIKit.UIImage?
+  @_Concurrency.MainActor(unsafe) public var noResultText: Swift.String {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var resultText: Swift.String {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var scanningText: Swift.String {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var scanningAnimationCompletion: (() -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var imageView: UIKit.UIImageView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) public func showScanningAnimation(_ show: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func showCustomMessage(_ text: Swift.String, completion: @escaping (Swift.Bool) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public func showResultMessage(noResult: Swift.Bool = false, completion: @escaping (Swift.Bool) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public struct ScanAgainConfiguration {
+  public static var shared: BlinkShelf.ScanAgainConfiguration
+  public var navigationBarColor: UIKit.UIColor
+  public var borderColor: UIKit.UIColor
+  public var borderWidth: CoreFoundation.CGFloat
+  public var borderGap: CoreFoundation.CGFloat
+  public var contentBackgroundColor: UIKit.UIColor
+  public var hideBorder: Swift.Bool
+  public var iconImage: UIKit.UIImage?
+  public var iconTintColor: UIKit.UIColor
+  public var text: Swift.String
+  public var textFont: UIKit.UIFont
+  public var textColor: UIKit.UIColor
+  public var storeIconImage: UIKit.UIImage?
+  public var storeLabelColor: UIKit.UIColor
+  public init()
+}
+public struct Promo : Swift.Decodable {
+  public init(from decoder: Swift.Decoder) throws
+}
+extension BlinkShelf.Promo : Swift.Equatable {
+  public static func == (lhs: BlinkShelf.Promo, rhs: BlinkShelf.Promo) -> Swift.Bool
+}
+public class ProductsRepository {
+  public init()
+  public func getProductsInfo(products: [BlinkShelf.Products.Request.Product], userLocation: BlinkShelf.UserLocation? = nil, completion: @escaping (_ productsResponse: BlinkShelf.Products.Response?) -> Swift.Void)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class ScanAgainStoreView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var iconView: UIKit.UIImageView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var label: UIKit.UILabel {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public init(storeName: Swift.String, frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class ResultListCell : UIKit.UITableViewCell {
+  @_Concurrency.MainActor(unsafe) public static let cellHeight: CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) public var promo: BlinkShelf.Promo? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var product: BlinkShelf.ProductInfo? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var contentBackgroundView: UIKit.UIView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var photoView: UIKit.UIImageView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var highlightedLabel: UIKit.UILabel {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var highlightedView: UIKit.UIView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var tagView: UIKit.UIView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var tagImageView: UIKit.UIImageView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var titleLabel: UIKit.UILabel {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var subtitleLabel: UIKit.UILabel {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var detailLabel: UIKit.UILabel {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) public func loadProduct(_ product: BlinkShelf.ProductInfo, withPromotionAtIndex index: Swift.Int? = nil)
+  @objc deinit
+}
+public struct ScanActivityConfiguration {
+  public static var shared: BlinkShelf.ScanActivityConfiguration
+  public var contentBackgroundColor: UIKit.UIColor
+  public var font: UIKit.UIFont?
+  public var noResultText: Swift.String
+  public var resultText: Swift.String
+  public var scanningText: Swift.String
+  public var textColor: UIKit.UIColor
+  public init()
+}
+@_hasMissingDesignatedInitializers final public class SDKManager {
+  public static func setLicenseKey(_ licenseKey: Swift.String, completion: ((_ success: Swift.Bool) -> Swift.Void)? = nil)
+  @objc deinit
+}
+extension BlinkShelf.StoreDetectionConfiguration.UnitOfDistance : Swift.Equatable {}
+extension BlinkShelf.StoreDetectionConfiguration.UnitOfDistance : Swift.Hashable {}
+extension BlinkShelf.StoreDetectionConfiguration.UnitOfDistance : Swift.RawRepresentable {}
+extension BlinkShelf.SDKConfiguration.SinglePhotoBoundingBoxesToShow : Swift.Equatable {}
+extension BlinkShelf.SDKConfiguration.SinglePhotoBoundingBoxesToShow : Swift.Hashable {}
