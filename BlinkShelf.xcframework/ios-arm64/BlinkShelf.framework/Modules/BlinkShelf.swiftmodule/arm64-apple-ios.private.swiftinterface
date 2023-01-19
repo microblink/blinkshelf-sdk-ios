@@ -1,10 +1,12 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
 // swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BlinkShelf
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import ARKit
 import AVFoundation
+import AVKit
 @_exported import BlinkShelf
+import CommonCrypto
 import CoreLocation
 import CoreMedia
 import CoreMotion
@@ -155,7 +157,7 @@ public struct ResultIndicatorConfiguration {
   @_Concurrency.MainActor(unsafe) @objc open func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
   @_Concurrency.MainActor(unsafe) @objc open func photoOutput(_ output: AVFoundation.AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVFoundation.AVCapturePhoto, error: Swift.Error?)
   @_Concurrency.MainActor(unsafe) @objc open func photoOutput(_ output: AVFoundation.AVCapturePhotoOutput, willCapturePhotoFor resolvedSettings: AVFoundation.AVCaptureResolvedPhotoSettings)
-  @_Concurrency.MainActor(unsafe) open func clearAllCapturedImagesFromDisk(okTitle: Swift.String?, okMesssage: Swift.String?, failedTitle: Swift.String?, failedMessage: Swift.String?)
+  @_Concurrency.MainActor(unsafe) open func clearAllCapturedImagesFromDisk(completion: ((Swift.Bool) -> Swift.Void)? = nil)
   @_Concurrency.MainActor(unsafe) open func startCaptureSession()
   @_Concurrency.MainActor(unsafe) open func stopCaptureSession()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
@@ -424,6 +426,9 @@ public struct ResultListCellConfiguration {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
+}
+extension BlinkShelf.ResultVC : UIKit.UIScrollViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func viewForZooming(in scrollView: UIKit.UIScrollView) -> UIKit.UIView?
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ResultDetailsVC : UIKit.UIViewController {
   @_Concurrency.MainActor(unsafe) public var didDismiss: (() -> Swift.Void)?
@@ -722,7 +727,9 @@ public protocol ContoursExtractorDelegate : AnyObject {
   func contoursExtractor(lastProcessingTime: Swift.UInt64)
 }
 @objc @_hasMissingDesignatedInitializers final public class LocationManager : ObjectiveC.NSObject {
-  public static let shared: BlinkShelf.LocationManager
+  final public class var shared: BlinkShelf.LocationManager {
+    get
+  }
   final public var canEnableStoreDetection: Swift.Bool {
     get
   }
@@ -731,6 +738,7 @@ public protocol ContoursExtractorDelegate : AnyObject {
   }
   final public func startUpdatingLocation()
   final public func stopUpdatingLocation()
+  final public func destroySharedInstance()
   @objc deinit
 }
 extension BlinkShelf.LocationManager : CoreLocation.CLLocationManagerDelegate {
@@ -740,7 +748,9 @@ extension BlinkShelf.LocationManager : CoreLocation.CLLocationManagerDelegate {
 public struct UserLocation {
 }
 @_hasMissingDesignatedInitializers final public class NetworkManager {
-  public static var shared: BlinkShelf.NetworkManager
+  final public class var shared: BlinkShelf.NetworkManager {
+    get
+  }
   final public var isReachable: Swift.Bool {
     get
   }
@@ -751,6 +761,7 @@ public struct UserLocation {
   @objc deinit
   final public func startMonitoring()
   final public func stopMonitoring()
+  final public func destroySharedInstance()
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ScanActivityViewController : UIKit.UIViewController {
   @_Concurrency.MainActor(unsafe) public var capturedImage: UIKit.UIImage?
@@ -807,6 +818,12 @@ public class ProductsRepository {
   public init()
   public func getProductsInfo(products: [BlinkShelf.Products.Request.Product], userLocation: BlinkShelf.UserLocation? = nil, completion: @escaping (_ productsResponse: BlinkShelf.Products.Response?) -> Swift.Void)
   @objc deinit
+}
+extension Foundation.Data {
+  public static func fromBase64(_ encoded: Swift.String) -> Foundation.Data?
+  public var bytes: Swift.Array<Swift.UInt8> {
+    get
+  }
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class ScanAgainStoreView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public var iconView: UIKit.UIImageView {
