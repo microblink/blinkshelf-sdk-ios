@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'BlinkShelf'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'BlinkShelf lets you build a fantastic in-store experience in your iOS app.'
 
   s.description      = <<-DESC
