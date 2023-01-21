@@ -13,6 +13,7 @@
 #import "BGRImageCropper.h"
 #import "AddProductsViewController.h"
 #import "TrackedDataObjC.h"
+#import "Obfuscator.h"
 
 // TODO remove this once it is no longer used in the demo app directly
 #import "ImageUtilsObjCpp.h"
