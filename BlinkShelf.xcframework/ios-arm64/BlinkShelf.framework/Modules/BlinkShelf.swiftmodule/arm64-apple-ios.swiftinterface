@@ -329,9 +329,71 @@ extension BlinkShelf.Products {
   public struct StaticDiscovery {
     public struct Response : Swift.Decodable {
       public struct Product : Swift.Decodable {
+        public var order: Swift.Int?
+        public var coordinates: BlinkShelf.Products.StaticDiscovery.Response.Coordinates?
+        public var encryptedCoordinates: Swift.String?
+        public var upc: Swift.String?
+        public var productName: Swift.String?
+        public var brand: Swift.String?
+        public var size: Swift.String?
+        public var imageUrl: Swift.String?
+        public var sector: Swift.String?
+        public var department: Swift.String?
+        public var majorCategory: Swift.String?
+        public var discovery: BlinkShelf.Products.StaticDiscovery.Response.Discovery?
+        public init(from decoder: Swift.Decoder) throws
+      }
+      public struct Coordinates : Swift.Decodable {
+        public var x1: Swift.Float
+        public var y1: Swift.Float
+        public var x2: Swift.Float
+        public var y2: Swift.Float
+        public var rect: CoreFoundation.CGRect
+        public init(from decoder: Swift.Decoder) throws
+      }
+      public struct Discovery : Swift.Decodable {
+        public var dietary: BlinkShelf.Products.StaticDiscovery.Response.Dietary?
+        public var reviews: BlinkShelf.Products.StaticDiscovery.Response.Reviews?
+        public init(from decoder: Swift.Decoder) throws
+      }
+      public struct Dietary : Swift.Decodable {
+        public var barcodes: [Swift.String]?
+        public var dietaryTags: [Swift.String]?
+        public var allergenTags: [Swift.String]?
+        public var ingredients: [Swift.String]?
+        public var nutrition: [BlinkShelf.Products.StaticDiscovery.Response.Nutrition]?
+        public init(from decoder: Swift.Decoder) throws
+      }
+      public struct Nutrition : Swift.Decodable {
+        public var nutrient: Swift.String?
+        public var amount: Swift.Float?
+        public var measurement: Swift.String?
+        public init(from decoder: Swift.Decoder) throws
+      }
+      public struct Reviews : Swift.Decodable {
+        public var totalAverageRatings: Swift.Float?
+        public var topReviews: [BlinkShelf.Products.StaticDiscovery.Response.Review]?
+        public var recentReviews: [BlinkShelf.Products.StaticDiscovery.Response.Review]?
+        public init(from decoder: Swift.Decoder) throws
+      }
+      public struct Review : Swift.Decodable {
+        public var date: Swift.String?
+        public var name: Swift.String?
+        public var title: Swift.String?
+        public var description: Swift.String?
+        public var rating: Swift.Float?
+        public static let minRating: Swift.Int
+        public static let maxRating: Swift.Int
         public init(from decoder: Swift.Decoder) throws
       }
       public struct PromotionDisplay : Swift.Decodable {
+        public var id: Swift.Int
+        public var headline: Swift.String?
+        public var description: Swift.String?
+        public var limitationDetails: Swift.String?
+        public var bannerText: Swift.String?
+        public var thumbnailUrl: Swift.String?
+        public var expandedImageUrl: Swift.String?
         public init(from decoder: Swift.Decoder) throws
       }
       public struct Session : Swift.Decodable {
