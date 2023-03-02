@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "blinkshelf-sdk-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/microblink/blinkshelf-sdk-ios/",
+      "state" : {
+        "revision" : "12b8afaf96170fb26244961481c8418c07f627cd",
+        "version" : "1.0.1"
+      }
+    }
+  ],
+  "version" : 2
+}

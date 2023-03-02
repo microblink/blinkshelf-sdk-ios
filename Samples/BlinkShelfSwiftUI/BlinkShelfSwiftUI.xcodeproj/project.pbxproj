@@ -1,0 +1,381 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		549E17E4299F5AFA006A8A85 /* BlinkShelfSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549E17E3299F5AFA006A8A85 /* BlinkShelfSwiftUIApp.swift */; };
+		549E17E6299F5AFA006A8A85 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549E17E5299F5AFA006A8A85 /* ContentView.swift */; };
+		549E17E8299F5AFB006A8A85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 549E17E7299F5AFB006A8A85 /* Assets.xcassets */; };
+		549E17EB299F5AFB006A8A85 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 549E17EA299F5AFB006A8A85 /* Preview Assets.xcassets */; };
+		549E17F3299F5F6D006A8A85 /* BlinkShelf in Frameworks */ = {isa = PBXBuildFile; productRef = 549E17F2299F5F6D006A8A85 /* BlinkShelf */; };
+		549E17F5299F65A0006A8A85 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549E17F4299F65A0006A8A85 /* CameraView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		549E17E0299F5AFA006A8A85 /* BlinkShelfSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlinkShelfSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		549E17E3299F5AFA006A8A85 /* BlinkShelfSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlinkShelfSwiftUIApp.swift; sourceTree = "<group>"; };
+		549E17E5299F5AFA006A8A85 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		549E17E7299F5AFB006A8A85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		549E17EA299F5AFB006A8A85 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		549E17F4299F65A0006A8A85 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		549E17F6299F6828006A8A85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		549E17DD299F5AFA006A8A85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				549E17F3299F5F6D006A8A85 /* BlinkShelf in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		549E17D7299F5AFA006A8A85 = {
+			isa = PBXGroup;
+			children = (
+				549E17E2299F5AFA006A8A85 /* BlinkShelfSwiftUI */,
+				549E17E1299F5AFA006A8A85 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		549E17E1299F5AFA006A8A85 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				549E17E0299F5AFA006A8A85 /* BlinkShelfSwiftUI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		549E17E2299F5AFA006A8A85 /* BlinkShelfSwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				549E17F6299F6828006A8A85 /* Info.plist */,
+				549E17E3299F5AFA006A8A85 /* BlinkShelfSwiftUIApp.swift */,
+				549E17E5299F5AFA006A8A85 /* ContentView.swift */,
+				549E17F4299F65A0006A8A85 /* CameraView.swift */,
+				549E17E7299F5AFB006A8A85 /* Assets.xcassets */,
+				549E17E9299F5AFB006A8A85 /* Preview Content */,
+			);
+			path = BlinkShelfSwiftUI;
+			sourceTree = "<group>";
+		};
+		549E17E9299F5AFB006A8A85 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				549E17EA299F5AFB006A8A85 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		549E17DF299F5AFA006A8A85 /* BlinkShelfSwiftUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 549E17EE299F5AFB006A8A85 /* Build configuration list for PBXNativeTarget "BlinkShelfSwiftUI" */;
+			buildPhases = (
+				549E17DC299F5AFA006A8A85 /* Sources */,
+				549E17DD299F5AFA006A8A85 /* Frameworks */,
+				549E17DE299F5AFA006A8A85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlinkShelfSwiftUI;
+			packageProductDependencies = (
+				549E17F2299F5F6D006A8A85 /* BlinkShelf */,
+			);
+			productName = BlinkShelfSwiftUI;
+			productReference = 549E17E0299F5AFA006A8A85 /* BlinkShelfSwiftUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		549E17D8299F5AFA006A8A85 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					549E17DF299F5AFA006A8A85 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 549E17DB299F5AFA006A8A85 /* Build configuration list for PBXProject "BlinkShelfSwiftUI" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 549E17D7299F5AFA006A8A85;
+			packageReferences = (
+				549E17F1299F5F6D006A8A85 /* XCRemoteSwiftPackageReference "blinkshelf-sdk-ios" */,
+			);
+			productRefGroup = 549E17E1299F5AFA006A8A85 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				549E17DF299F5AFA006A8A85 /* BlinkShelfSwiftUI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		549E17DE299F5AFA006A8A85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				549E17EB299F5AFB006A8A85 /* Preview Assets.xcassets in Resources */,
+				549E17E8299F5AFB006A8A85 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		549E17DC299F5AFA006A8A85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				549E17F5299F65A0006A8A85 /* CameraView.swift in Sources */,
+				549E17E6299F5AFA006A8A85 /* ContentView.swift in Sources */,
+				549E17E4299F5AFA006A8A85 /* BlinkShelfSwiftUIApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		549E17EC299F5AFB006A8A85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		549E17ED299F5AFB006A8A85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		549E17EF299F5AFB006A8A85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BlinkShelfSwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = CQTJWP89J7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BlinkShelfSwiftUI/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "For the app to work, camera access should be granted.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "User location is needed to detect the current store.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.microblink.BlinkShelfSwiftUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		549E17F0299F5AFB006A8A85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BlinkShelfSwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = CQTJWP89J7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BlinkShelfSwiftUI/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "For the app to work, camera access should be granted.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "User location is needed to detect the current store.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.microblink.BlinkShelfSwiftUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		549E17DB299F5AFA006A8A85 /* Build configuration list for PBXProject "BlinkShelfSwiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				549E17EC299F5AFB006A8A85 /* Debug */,
+				549E17ED299F5AFB006A8A85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		549E17EE299F5AFB006A8A85 /* Build configuration list for PBXNativeTarget "BlinkShelfSwiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				549E17EF299F5AFB006A8A85 /* Debug */,
+				549E17F0299F5AFB006A8A85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		549E17F1299F5F6D006A8A85 /* XCRemoteSwiftPackageReference "blinkshelf-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/microblink/blinkshelf-sdk-ios/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		549E17F2299F5F6D006A8A85 /* BlinkShelf */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 549E17F1299F5F6D006A8A85 /* XCRemoteSwiftPackageReference "blinkshelf-sdk-ios" */;
+			productName = BlinkShelf;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 549E17D8299F5AFA006A8A85 /* Project object */;
+}
