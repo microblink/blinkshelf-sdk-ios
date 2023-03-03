@@ -22503,21 +22503,21 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "BlinkShelf.ResultIndicator?",
+                "printedName": "BlinkShelf.ProductInfo?",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "ResultIndicator",
-                    "printedName": "BlinkShelf.ResultIndicator",
-                    "usr": "c:@M@BlinkShelf@objc(cs)ResultIndicator"
+                    "name": "ProductInfo",
+                    "printedName": "BlinkShelf.ProductInfo",
+                    "usr": "s:10BlinkShelf11ProductInfoV"
                   }
                 ],
                 "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:10BlinkShelf22ResultBannerScrollViewC04loadC7Banners3foryAA0C9IndicatorCSg_tF",
-            "mangledName": "$s10BlinkShelf22ResultBannerScrollViewC04loadC7Banners3foryAA0C9IndicatorCSg_tF",
+            "usr": "s:10BlinkShelf22ResultBannerScrollViewC04loadC7Banners3foryAA11ProductInfoVSg_tF",
+            "mangledName": "$s10BlinkShelf22ResultBannerScrollViewC04loadC7Banners3foryAA11ProductInfoVSg_tF",
             "moduleName": "BlinkShelf",
             "declAttributes": [
               "Custom",
@@ -46017,98 +46017,98 @@
     {
       "filePath": "\/Users\/andylim\/Library\/CloudStorage\/Dropbox\/Projects\/product-recognition-ios\/BlinkShelf\/BlinkShelf\/SinglePhoto\/SinglePhotoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 4039,
+      "offset": 4035,
       "length": 3,
       "value": "264"
     },
     {
       "filePath": "\/Users\/andylim\/Library\/CloudStorage\/Dropbox\/Projects\/product-recognition-ios\/BlinkShelf\/BlinkShelf\/SinglePhoto\/SinglePhotoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 4052,
+      "offset": 4048,
       "length": 2,
       "value": "40"
     },
     {
       "filePath": "\/Users\/andylim\/Library\/CloudStorage\/Dropbox\/Projects\/product-recognition-ios\/BlinkShelf\/BlinkShelf\/SinglePhoto\/SinglePhotoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 4100,
+      "offset": 4096,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andylim\/Library\/CloudStorage\/Dropbox\/Projects\/product-recognition-ios\/BlinkShelf\/BlinkShelf\/SinglePhoto\/SinglePhotoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 4271,
+      "offset": 4267,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andylim\/Library\/CloudStorage\/Dropbox\/Projects\/product-recognition-ios\/BlinkShelf\/BlinkShelf\/SinglePhoto\/SinglePhotoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 4480,
+      "offset": 4476,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andylim\/Library\/CloudStorage\/Dropbox\/Projects\/product-recognition-ios\/BlinkShelf\/BlinkShelf\/SinglePhoto\/SinglePhotoVC.swift",
       "kind": "StringLiteral",
-      "offset": 4530,
+      "offset": 4526,
       "length": 9,
       "value": "\"shutter\""
     },
     {
       "filePath": "\/Users\/andylim\/Library\/CloudStorage\/Dropbox\/Projects\/product-recognition-ios\/BlinkShelf\/BlinkShelf\/SinglePhoto\/SinglePhotoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 5447,
+      "offset": 5443,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andylim\/Library\/CloudStorage\/Dropbox\/Projects\/product-recognition-ios\/BlinkShelf\/BlinkShelf\/SinglePhoto\/SinglePhotoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 5513,
+      "offset": 5509,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andylim\/Library\/CloudStorage\/Dropbox\/Projects\/product-recognition-ios\/BlinkShelf\/BlinkShelf\/SinglePhoto\/SinglePhotoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 5569,
+      "offset": 5565,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/andylim\/Library\/CloudStorage\/Dropbox\/Projects\/product-recognition-ios\/BlinkShelf\/BlinkShelf\/SinglePhoto\/SinglePhotoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 5923,
+      "offset": 5919,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andylim\/Library\/CloudStorage\/Dropbox\/Projects\/product-recognition-ios\/BlinkShelf\/BlinkShelf\/SinglePhoto\/SinglePhotoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 6044,
+      "offset": 6040,
       "length": 2,
       "value": "12"
     },
     {
       "filePath": "\/Users\/andylim\/Library\/CloudStorage\/Dropbox\/Projects\/product-recognition-ios\/BlinkShelf\/BlinkShelf\/SinglePhoto\/SinglePhotoVC.swift",
       "kind": "StringLiteral",
-      "offset": 6231,
+      "offset": 6227,
       "length": 37,
       "value": "\"Session ID: \""
     },
     {
       "filePath": "\/Users\/andylim\/Library\/CloudStorage\/Dropbox\/Projects\/product-recognition-ios\/BlinkShelf\/BlinkShelf\/SinglePhoto\/SinglePhotoVC.swift",
       "kind": "StringLiteral",
-      "offset": 6264,
+      "offset": 6260,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andylim\/Library\/CloudStorage\/Dropbox\/Projects\/product-recognition-ios\/BlinkShelf\/BlinkShelf\/SinglePhoto\/SinglePhotoVC.swift",
       "kind": "StringLiteral",
-      "offset": 6267,
+      "offset": 6263,
       "length": 1,
       "value": "\"\""
     },
@@ -48005,14 +48005,14 @@
     {
       "filePath": "\/Users\/andylim\/Library\/CloudStorage\/Dropbox\/Projects\/product-recognition-ios\/BlinkShelf\/BlinkShelf\/Result\/ResultVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 14203,
+      "offset": 14212,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andylim\/Library\/CloudStorage\/Dropbox\/Projects\/product-recognition-ios\/BlinkShelf\/BlinkShelf\/Result\/ResultVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 14226,
+      "offset": 14235,
       "length": 4,
       "value": "true"
     },

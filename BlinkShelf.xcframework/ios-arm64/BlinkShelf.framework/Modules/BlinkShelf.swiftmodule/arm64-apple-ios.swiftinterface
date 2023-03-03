@@ -573,7 +573,7 @@ extension BlinkShelf.ResultVC : UIKit.UIScrollViewDelegate {
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
-  @_Concurrency.MainActor(unsafe) public func loadResultBanners(for resultIndicator: BlinkShelf.ResultIndicator?)
+  @_Concurrency.MainActor(unsafe) public func loadResultBanners(for product: BlinkShelf.ProductInfo?)
   @_Concurrency.MainActor(unsafe) @objc public func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
   @objc deinit
 }
