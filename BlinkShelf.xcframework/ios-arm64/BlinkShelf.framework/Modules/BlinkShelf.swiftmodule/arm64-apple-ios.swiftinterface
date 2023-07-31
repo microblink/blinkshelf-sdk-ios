@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
 // swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BlinkShelf
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import ARKit
@@ -155,7 +155,7 @@ public struct ResultIndicatorConfiguration {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLayoutSubviews()
   @_Concurrency.MainActor(unsafe) @objc open func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
-  @_Concurrency.MainActor(unsafe) @objc open func photoOutput(_ output: AVFoundation.AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVFoundation.AVCapturePhoto, error: Swift.Error?)
+  @_Concurrency.MainActor(unsafe) @objc open func photoOutput(_ output: AVFoundation.AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVFoundation.AVCapturePhoto, error: (any Swift.Error)?)
   @_Concurrency.MainActor(unsafe) @objc open func photoOutput(_ output: AVFoundation.AVCapturePhotoOutput, willCapturePhotoFor resolvedSettings: AVFoundation.AVCaptureResolvedPhotoSettings)
   @_Concurrency.MainActor(unsafe) open func clearAllCapturedImagesFromDisk(completion: ((Swift.Bool) -> Swift.Void)? = nil)
   @_Concurrency.MainActor(unsafe) open func startCaptureSession()
@@ -314,10 +314,10 @@ public struct Store : Swift.Decodable {
   public var distance: Swift.Double?
   public var units: Swift.String?
   public var merchantName: Swift.String?
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public class FeaturesExtractor {
-  weak public var delegate: BlinkShelf.FeaturesExtractorDelegate?
+  weak public var delegate: (any BlinkShelf.FeaturesExtractorDelegate)?
   public init(arSession: ARKit.ARSession, timeInterval: Foundation.TimeInterval)
   @objc deinit
 }
@@ -341,7 +341,7 @@ extension BlinkShelf.Products {
         public var department: Swift.String?
         public var majorCategory: Swift.String?
         public var discovery: BlinkShelf.Products.StaticDiscovery.Response.Discovery?
-        public init(from decoder: Swift.Decoder) throws
+        public init(from decoder: any Swift.Decoder) throws
       }
       public struct Coordinates : Swift.Decodable {
         public var x1: Swift.Float
@@ -349,12 +349,12 @@ extension BlinkShelf.Products {
         public var x2: Swift.Float
         public var y2: Swift.Float
         public var rect: CoreFoundation.CGRect
-        public init(from decoder: Swift.Decoder) throws
+        public init(from decoder: any Swift.Decoder) throws
       }
       public struct Discovery : Swift.Decodable {
         public var dietary: BlinkShelf.Products.StaticDiscovery.Response.Dietary?
         public var reviews: BlinkShelf.Products.StaticDiscovery.Response.Reviews?
-        public init(from decoder: Swift.Decoder) throws
+        public init(from decoder: any Swift.Decoder) throws
       }
       public struct Dietary : Swift.Decodable {
         public var barcodes: [Swift.String]?
@@ -362,19 +362,19 @@ extension BlinkShelf.Products {
         public var allergenTags: [Swift.String]?
         public var ingredients: [Swift.String]?
         public var nutrition: [BlinkShelf.Products.StaticDiscovery.Response.Nutrition]?
-        public init(from decoder: Swift.Decoder) throws
+        public init(from decoder: any Swift.Decoder) throws
       }
       public struct Nutrition : Swift.Decodable {
         public var nutrient: Swift.String?
         public var amount: Swift.Float?
         public var measurement: Swift.String?
-        public init(from decoder: Swift.Decoder) throws
+        public init(from decoder: any Swift.Decoder) throws
       }
       public struct Reviews : Swift.Decodable {
         public var totalAverageRatings: Swift.Float?
         public var topReviews: [BlinkShelf.Products.StaticDiscovery.Response.Review]?
         public var recentReviews: [BlinkShelf.Products.StaticDiscovery.Response.Review]?
-        public init(from decoder: Swift.Decoder) throws
+        public init(from decoder: any Swift.Decoder) throws
       }
       public struct Review : Swift.Decodable {
         public var date: Swift.String?
@@ -384,7 +384,7 @@ extension BlinkShelf.Products {
         public var rating: Swift.Float?
         public static let minRating: Swift.Int
         public static let maxRating: Swift.Int
-        public init(from decoder: Swift.Decoder) throws
+        public init(from decoder: any Swift.Decoder) throws
       }
       public struct PromotionDisplay : Swift.Decodable {
         public var id: Swift.Int
@@ -394,19 +394,19 @@ extension BlinkShelf.Products {
         public var bannerText: Swift.String?
         public var thumbnailUrl: Swift.String?
         public var expandedImageUrl: Swift.String?
-        public init(from decoder: Swift.Decoder) throws
+        public init(from decoder: any Swift.Decoder) throws
       }
       public struct Session : Swift.Decodable {
         public var sessionId: Swift.String?
         public var frameId: Swift.String?
-        public init(from decoder: Swift.Decoder) throws
+        public init(from decoder: any Swift.Decoder) throws
       }
       public struct StoreDetection : Swift.Decodable {
         public var store: BlinkShelf.Store?
         public var suggestions: [BlinkShelf.Store]
-        public init(from decoder: Swift.Decoder) throws
+        public init(from decoder: any Swift.Decoder) throws
       }
-      public init(from decoder: Swift.Decoder) throws
+      public init(from decoder: any Swift.Decoder) throws
     }
   }
 }
@@ -598,22 +598,23 @@ public struct StoreDetectionConfiguration {
   }
 }
 public struct Products {
-  public struct Request : Swift.Encodable {
+  public struct ProductsRequest : Swift.Encodable {
     public var countryIsoAlpha2Code: Swift.String
-    public var products: [BlinkShelf.Products.Request.Product]
-    public var features: BlinkShelf.Products.Request.Features
-    public var storeDetection: BlinkShelf.Products.Request.StoreDetection?
+    public var products: [BlinkShelf.Products.ProductsRequest.Product]
+    public var features: BlinkShelf.Products.ProductsRequest.Features
+    public var storeDetection: BlinkShelf.Products.ProductsRequest.StoreDetection?
+    public var session: BlinkShelf.Products.ProductsRequest.Session?
     public struct Product : Swift.Encodable {
       public var order: Swift.Int
-      public var productIntelData: BlinkShelf.Products.Request.Product.ProductIntelData?
+      public var productIntelData: BlinkShelf.Products.ProductsRequest.Product.ProductIntelData?
       public var imageBase64Encoded: Swift.String?
       public var embedding: [Swift.Float]?
-      public init(order: Swift.Int, productIntelData: BlinkShelf.Products.Request.Product.ProductIntelData? = nil, imageBase64Encoded: Swift.String? = nil, embedding: [Swift.Float]? = nil)
+      public init(order: Swift.Int, productIntelData: BlinkShelf.Products.ProductsRequest.Product.ProductIntelData? = nil, imageBase64Encoded: Swift.String? = nil, embedding: [Swift.Float]? = nil)
       public struct ProductIntelData : Swift.Encodable {
         public var upc: Swift.String
-        public func encode(to encoder: Swift.Encoder) throws
+        public func encode(to encoder: any Swift.Encoder) throws
       }
-      public func encode(to encoder: Swift.Encoder) throws
+      public func encode(to encoder: any Swift.Encoder) throws
     }
     public struct Features : Swift.Encodable {
       public var dietary: Swift.Bool
@@ -621,23 +622,31 @@ public struct Products {
       public var ratings: Swift.Bool
       public var promotions: Swift.Bool
       public var reviews: Swift.Bool
-      public func encode(to encoder: Swift.Encoder) throws
+      public func encode(to encoder: any Swift.Encoder) throws
     }
     public struct StoreDetection : Swift.Encodable {
       public var latitude: Swift.Double
       public var longitude: Swift.Double
       public var radius: Swift.Float
       public var units: Swift.String
-      public func encode(to encoder: Swift.Encoder) throws
+      public func encode(to encoder: any Swift.Encoder) throws
     }
-    public func encode(to encoder: Swift.Encoder) throws
+    public struct Session : Swift.Encodable {
+      public func encode(to encoder: any Swift.Encoder) throws
+    }
+    public func encode(to encoder: any Swift.Encoder) throws
   }
-  public struct Response : Swift.Decodable {
+  public struct SessionRequestData : Swift.Encodable {
+    public var sdkVersion: Swift.String
+    public var platform: Swift.String
+    public func encode(to encoder: any Swift.Encoder) throws
+  }
+  public struct ProductsResponse : Swift.Decodable {
     public var success: Swift.Bool?
-    public var products: [BlinkShelf.Products.Response.Product]?
-    public var promotions: BlinkShelf.Products.Response.Promotions?
-    public var storeDetection: BlinkShelf.Products.Response.StoreDetection?
-    public init(success: Swift.Bool? = nil, products: [BlinkShelf.Products.Response.Product]? = nil, promotions: BlinkShelf.Products.Response.Promotions? = nil, storeDetection: BlinkShelf.Products.Response.StoreDetection? = nil)
+    public var products: [BlinkShelf.Products.ProductsResponse.Product]?
+    public var promotions: BlinkShelf.Products.ProductsResponse.Promotions?
+    public var storeDetection: BlinkShelf.Products.ProductsResponse.StoreDetection?
+    public init(success: Swift.Bool? = nil, products: [BlinkShelf.Products.ProductsResponse.Product]? = nil, promotions: BlinkShelf.Products.ProductsResponse.Promotions? = nil, storeDetection: BlinkShelf.Products.ProductsResponse.StoreDetection? = nil)
     public struct Product : Swift.Decodable {
       public var order: Swift.Int
       public var upc: Swift.String?
@@ -648,33 +657,33 @@ public struct Products {
       public var sector: Swift.String?
       public var department: Swift.String?
       public var majorCategory: Swift.String?
-      public var discovery: BlinkShelf.Products.Response.Discovery?
-      public init(from decoder: Swift.Decoder) throws
+      public var discovery: BlinkShelf.Products.ProductsResponse.Discovery?
+      public init(from decoder: any Swift.Decoder) throws
     }
     public struct Discovery : Swift.Decodable {
-      public var dietary: BlinkShelf.Products.Response.Dietary?
-      public var reviews: BlinkShelf.Products.Response.Reviews?
-      public init(from decoder: Swift.Decoder) throws
+      public var dietary: BlinkShelf.Products.ProductsResponse.Dietary?
+      public var reviews: BlinkShelf.Products.ProductsResponse.Reviews?
+      public init(from decoder: any Swift.Decoder) throws
     }
     public struct Dietary : Swift.Decodable {
       public var barcodes: [Swift.String]?
       public var dietaryTags: [Swift.String]?
       public var allergenTags: [Swift.String]?
       public var ingredients: [Swift.String]?
-      public var nutrition: [BlinkShelf.Products.Response.Nutrition]?
-      public init(from decoder: Swift.Decoder) throws
+      public var nutrition: [BlinkShelf.Products.ProductsResponse.Nutrition]?
+      public init(from decoder: any Swift.Decoder) throws
     }
     public struct Nutrition : Swift.Decodable {
       public var name: Swift.String?
       public var amount: Swift.String?
       public var measurement: Swift.String?
-      public init(from decoder: Swift.Decoder) throws
+      public init(from decoder: any Swift.Decoder) throws
     }
     public struct Reviews : Swift.Decodable {
       public var totalAverageRatings: Swift.Float?
-      public var topReviews: [BlinkShelf.Products.Response.Review]?
-      public var recentReviews: [BlinkShelf.Products.Response.Review]?
-      public init(from decoder: Swift.Decoder) throws
+      public var topReviews: [BlinkShelf.Products.ProductsResponse.Review]?
+      public var recentReviews: [BlinkShelf.Products.ProductsResponse.Review]?
+      public init(from decoder: any Swift.Decoder) throws
     }
     public struct Review : Swift.Decodable {
       public var date: Swift.String?
@@ -684,31 +693,43 @@ public struct Products {
       public var rating: Swift.Float?
       public static let minRating: Swift.Int
       public static let maxRating: Swift.Int
-      public init(from decoder: Swift.Decoder) throws
+      public init(from decoder: any Swift.Decoder) throws
     }
     public struct Promotions : Swift.Decodable {
-      public var targetedPromotions: [BlinkShelf.Products.Response.Promotion]?
-      public var untargetedPromotions: [BlinkShelf.Products.Response.Promotion]?
-      public init(from decoder: Swift.Decoder) throws
+      public var targetedPromotions: [BlinkShelf.Products.ProductsResponse.Promotion]?
+      public var untargetedPromotions: [BlinkShelf.Products.ProductsResponse.Promotion]?
+      public init(from decoder: any Swift.Decoder) throws
     }
     public struct Promotion : Swift.Decodable {
-      public var promotionDisplay: BlinkShelf.Products.Response.PromotionDisplay?
+      public var promotionDisplay: BlinkShelf.Products.ProductsResponse.PromotionDisplay?
       public var qualifiedProductIndices: [Swift.Int]
-      public init(from decoder: Swift.Decoder) throws
+      public init(from decoder: any Swift.Decoder) throws
     }
     public struct PromotionDisplay : Swift.Decodable {
       public var headline: Swift.String?
       public var description: Swift.String?
       public var limitationDetails: Swift.String?
       public var bannerText: Swift.String?
-      public init(from decoder: Swift.Decoder) throws
+      public var thumbnailUrl: Swift.String?
+      public var expandedImageUrl: Swift.String?
+      public init(from decoder: any Swift.Decoder) throws
     }
     public struct StoreDetection : Swift.Decodable {
       public var store: BlinkShelf.Store?
       public var suggestions: [BlinkShelf.Store]
-      public init(from decoder: Swift.Decoder) throws
+      public init(from decoder: any Swift.Decoder) throws
     }
-    public init(from decoder: Swift.Decoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct SessionResponse : Swift.Decodable {
+    public var success: Swift.Bool?
+    public var session: BlinkShelf.Products.SessionResponse.Session?
+    public init(success: Swift.Bool? = nil, session: BlinkShelf.Products.SessionResponse.Session? = nil)
+    public struct Session : Swift.Decodable {
+      public var sessionId: Swift.String?
+      public init(from decoder: any Swift.Decoder) throws
+    }
+    public init(from decoder: any Swift.Decoder) throws
   }
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class ResultIndicator : UIKit.UIView {
@@ -780,7 +801,7 @@ public struct SDKConfiguration {
   }
 }
 public class ContoursExtractor {
-  weak public var delegate: BlinkShelf.ContoursExtractorDelegate?
+  weak public var delegate: (any BlinkShelf.ContoursExtractorDelegate)?
   public init(arSession: ARKit.ARSession, timeInterval: Foundation.TimeInterval)
   @objc deinit
 }
@@ -871,14 +892,14 @@ public struct ScanAgainConfiguration {
   public init()
 }
 public struct Promo : Swift.Decodable {
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 extension BlinkShelf.Promo : Swift.Equatable {
   public static func == (lhs: BlinkShelf.Promo, rhs: BlinkShelf.Promo) -> Swift.Bool
 }
 public class ProductsRepository {
   public init()
-  public func getProductsInfo(products: [BlinkShelf.Products.Request.Product], userLocation: BlinkShelf.UserLocation? = nil, completion: @escaping (_ productsResponse: BlinkShelf.Products.Response?) -> Swift.Void)
+  public func getProductsInfo(products: [BlinkShelf.Products.ProductsRequest.Product], userLocation: BlinkShelf.UserLocation? = nil, completion: @escaping (_ productsResponse: BlinkShelf.Products.ProductsResponse?) -> Swift.Void)
   @objc deinit
 }
 extension Foundation.Data {
