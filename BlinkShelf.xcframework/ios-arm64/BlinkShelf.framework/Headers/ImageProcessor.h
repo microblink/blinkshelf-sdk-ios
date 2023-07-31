@@ -18,6 +18,7 @@
 
 typedef NS_ENUM(NSInteger, DetectorVersionObjC) {
     V_MOBILE_1_0_0,
+    V_MOBILE_1_1_0,
 };
 
 typedef NS_ENUM(NSInteger, EmbedderVersionObjC) {

@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		NdBk0BUR2GSpfDZI8On3+oRAKic=
+		FYIpvwPFE25ktQk7GPNnES6bRDw=
 		</data>
 		<key>Headers/AddProductsViewController.h</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/BlinkShelf-Swift.h</key>
 		<data>
-		PwpJD8hcq2zQkmbT9RYW6lGOZgY=
+		z7FQRw8qXlffODXROVQuvVnLLz0=
 		</data>
 		<key>Headers/BlinkShelf.h</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Headers/ImageProcessor.h</key>
 		<data>
-		2tcIzyCzD1S9GnWG1RktU0Mdei8=
+		clGljBmIpduifyJE9BrdHhHNYtI=
 		</data>
 		<key>Headers/ImageUtilsObjCpp.h</key>
 		<data>
@@ -74,55 +74,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		dLrnDj+9uZlcTM312mW6npYnCnc=
+		/HJOu60IOeocLyVCR9Be44tLagU=
 		</data>
 		<key>Model_27d60bf83843c524973438b0cdede7299381fae91b209862c5e0bf89b02039ac.strop</key>
 		<data>
-		oKBk4+2oQ9uNnSEQVnsO5MlHag8=
+		kAO+Im40aq9t7tQBMFQax+JrW1k=
 		</data>
 		<key>Model_577d7425a8003ca8f2f9575d469676383c07ce6a73d567a461b8c0502560aaea.strop</key>
 		<data>
-		Od+NS1hMgqsukab1KCw9uPhcRok=
+		bgWkhYldN9iczRNrkmrbcLnXrUs=
 		</data>
 		<key>Model_769fec4c73f87ab4a966a97cacac4baf70cc19a59db0bf294bcb19173fa6bc98.strop</key>
 		<data>
-		a9HtV/Pzpmwv+Cmzr9N0QCnLr3o=
-		</data>
-		<key>Model_83d8b6bdd492003937e29dbba3547058edf787412c9551cd865f36f360f7ef65.strop</key>
-		<data>
-		G+VMT+eicPN1KJHfiDYfQucm578=
-		</data>
-		<key>Model_d163c4c93d43942c1479f87db1e0f01d54447873cef62d50437b025689701fd0.strop</key>
-		<data>
-		w6UUoPaNRRvcBR01iln2dZiZrrw=
+		xlS7Z8DziADDJxo17BcX0tfAQuE=
 		</data>
 		<key>Model_d1a8cfb3e3b0a37b777156d74c8eb41101ce606e5565ad9ef1d522119c90bd3b.strop</key>
 		<data>
-		CuoxTQ2zTvVHdEyEiIzPRat3RKQ=
+		Do0afrIkDRC3yGLZ9Ob5ZLWkrY4=
 		</data>
 		<key>Model_f68f93e4c48514cf9fd6726f46aaab7a99ba6115eb9ca31f68c5c9a7c54d8629.strop</key>
 		<data>
-		uUzrrKSh2JJe7g3HL1I23SdC7hw=
+		dhn4CFYRHEGPvic9VFwHpQ7EnL8=
 		</data>
 		<key>Modules/BlinkShelf.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		d1YRiURyymWr4rDv7eC0Afjn4KY=
+		gBMTp/eXCKFKKehWOGyi/+PXJkE=
 		</data>
 		<key>Modules/BlinkShelf.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		upIEKuqkWjCQqwIfm3bhT2i3G30=
+		LvhMvMIqwZ7s136oU1SInVAmKOA=
 		</data>
 		<key>Modules/BlinkShelf.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		EuLCn10g1ItVe3Vis4PJ4Uw7pRM=
+		FjtQxEdE4fr2jlO9KTnnEZgzZog=
 		</data>
 		<key>Modules/BlinkShelf.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		upIEKuqkWjCQqwIfm3bhT2i3G30=
+		LvhMvMIqwZ7s136oU1SInVAmKOA=
 		</data>
 		<key>Modules/BlinkShelf.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		b7s5qYDXfQKMQrgMXwv+bTtCefo=
+		/gT8psFjXU4OknydibipOhgho7Q=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -175,7 +167,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wa0dMZjcxfABZ39CbaAQXvynsj3OXVnvfRnmN1eEjaQ=
+			8oXIg2UIHKvMF/ZlIR4a3xvcNytRvJyfBmtjOoSnVtI=
 			</data>
 		</dict>
 		<key>Headers/AddProductsViewController.h</key>
@@ -196,7 +188,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Thowu9w5yx2r+r6MQdxtAAwEAKvL6XwQaaecQjUxVbg=
+			sk+EPMyp1YTeIArDTWyQMG5SyjHT7HwlDujAPmspFYs=
 			</data>
 		</dict>
 		<key>Headers/BlinkShelf.h</key>
@@ -245,7 +237,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XVwAE1Shqn5nqJPC4FjUEzj6RVluhjgvWbZQLZLBKkQ=
+			QudhwB0+uLuB7BAExZNB9yWr/zuOsPaNhhTY0DQPsrs=
 			</data>
 		</dict>
 		<key>Headers/ImageUtilsObjCpp.h</key>
@@ -294,84 +286,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gaIqp12zjbFFQAANSj2ymd/7IYNHPesniZD8oplDVtw=
+			oMvS/bVzdiBIvwtx3rcjvBQQ3twYKvgxPrmG6uy5S4I=
 			</data>
 		</dict>
 		<key>Model_577d7425a8003ca8f2f9575d469676383c07ce6a73d567a461b8c0502560aaea.strop</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8Q9GH4yp1ZopVHCzisC+Qzyr34gElUXu0UIvSUS5bV4=
+			edva19f0iFCXghIhKsrC7eUU3tV1i7A8s0qu/i36Amw=
 			</data>
 		</dict>
 		<key>Model_769fec4c73f87ab4a966a97cacac4baf70cc19a59db0bf294bcb19173fa6bc98.strop</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FNfEGvHqSOIfTmvCQznA2habe4GiVNLZYWvFY2RgsWQ=
-			</data>
-		</dict>
-		<key>Model_83d8b6bdd492003937e29dbba3547058edf787412c9551cd865f36f360f7ef65.strop</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			a+bp+JKRuq5xDJ/VxLYvqVNDROSos+wVLz7NmQFXr6M=
-			</data>
-		</dict>
-		<key>Model_d163c4c93d43942c1479f87db1e0f01d54447873cef62d50437b025689701fd0.strop</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			L6MtXkitKSrnqhSCTGzKekWV35qCxkAhScEiNTL1VKo=
+			yjwUEp86vud0YQsZyJJUe1FJoqe//m6Mtd+Jx8NHUf8=
 			</data>
 		</dict>
 		<key>Model_d1a8cfb3e3b0a37b777156d74c8eb41101ce606e5565ad9ef1d522119c90bd3b.strop</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iiJmlS4yAXliIc3wdc4myLXROzXjHvYxyhbN+8k7ZCo=
+			yfFOwld0zBg3Sh2z/72AobeWACGRLoxaPdIzg+sakw4=
 			</data>
 		</dict>
 		<key>Model_f68f93e4c48514cf9fd6726f46aaab7a99ba6115eb9ca31f68c5c9a7c54d8629.strop</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			A8GDpSfkuI7EuG5wMB4sSr3yfpPUGe9P04hxN/N9o+s=
+			nxVvT7rOFe36sAiWY8C+5KTlMhhgvLRYIMyZpbN0jTo=
 			</data>
 		</dict>
 		<key>Modules/BlinkShelf.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fVZkvcuR7cuKrLY+QbSwZi97VBSsbmkKPLDto4a0gss=
+			UwxAsTBnsIyd5gIqK8aPmQdudnkQ6XcmGp3OwrNAV6A=
 			</data>
 		</dict>
 		<key>Modules/BlinkShelf.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9BwV5XIE0zsuIlKD5j9w9IMmu4wHEnNlhA0z5vratnU=
+			qkFRYbZA4sjSb4UBqTegqVdsuVOMR8zWjIjJdYmkMkA=
 			</data>
 		</dict>
 		<key>Modules/BlinkShelf.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PwYVWlxy4HnhaP8VBJsk02W0cFS2qWyagyiqRP5pBjU=
+			GkxKiUqh+IAb6Ly6M+9UmJqs2xrWbqXWQhX+H1RaAo0=
 			</data>
 		</dict>
 		<key>Modules/BlinkShelf.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9BwV5XIE0zsuIlKD5j9w9IMmu4wHEnNlhA0z5vratnU=
+			qkFRYbZA4sjSb4UBqTegqVdsuVOMR8zWjIjJdYmkMkA=
 			</data>
 		</dict>
 		<key>Modules/BlinkShelf.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			saQ9zBJHYM0zK8aS+HpCgujYySgrbrChjRRDnoJtFF4=
+			YGx/NLPJRF5wMTfW2wwSIuYfczKAaG5NhjrSSyigGeA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
